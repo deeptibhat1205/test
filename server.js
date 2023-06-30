@@ -10,6 +10,7 @@ var path = require('path')
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname,'public','login')))
 app.use(express.static(path.join(__dirname,'public','doctor')))
+app.use(express.static(path.join(__dirname, 'public', 'patient')))
 app.use(bodyParser.json())
 
 mongoose.connect("mongodb+srv://cipher:5223@cluster0.1kv1ue0.mongodb.net/medbase");
@@ -21,10 +22,24 @@ db.once('open',()=>console.log("Connected to Database"))
 
 
 // Patient login forwarding
-// app.post("/", function(req, res){
+app.post("/patient-login", function(req, res){
     
-   
-// })
+    const hashedPatientPwd = bcrypt.hash(req.body.ploginpwd, 10)
+
+    const patient_login_data = {
+        ploginName: req.body.ploginname,
+        ploginID: req.body.ploginid,
+        ploginPWD: req.body.hashedPatientPwd
+    }
+
+    db.collection('patient').insertOne(patient_login_data, (err,collection)=>{
+        if(err){
+            throw err;
+        }
+        console.log("record inserted");
+    });
+    return res.sendFile(path.join(__dirname,'public','patient','patient.html'))
+})
 
 
 

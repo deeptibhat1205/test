@@ -53,16 +53,16 @@
         </div>
         <div class="user_forms-signup">
           <h2 class="forms_title">Patient-Log in</h2>
-          <form class="forms_form">
+          <form class="forms_form" method="post" action="/patient-login">
             <fieldset class="forms_fieldset">
               <div class="forms_field">
-                <input type="text" placeholder="Patient-Name" class="forms_field-input" required />
+                <input type="text" placeholder="Patient-Name" id="ploginname" name="ploginname" class="forms_field-input" required />
               </div>
               <div class="forms_field">
-                <input type="text" placeholder="Patient-ID" class="forms_field-input" required />
+                <input type="text" placeholder="Patient-ID" id="ploginid" name="ploginid" class="forms_field-input" required />
               </div>
               <div class="forms_field">
-                <input type="password" placeholder="Password" class="forms_field-input" required />
+                <input type="password" placeholder="Password" id="ploginpwd" name="ploginpwd" class="forms_field-input" required />
               </div>
             </fieldset>
             <div class="forms_buttons">
