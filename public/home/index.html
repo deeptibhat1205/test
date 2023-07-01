@@ -47,7 +47,7 @@
       <div class="user_options-forms" id="user_options-forms">
         <div class="user_forms-login">
           <h2 class="forms_title">Doctor-Login</h2>
-          <form class="forms_form" method="post" action="/">
+          <form class="forms_form" id="doctor-login-form" method="post" action="/">
             <fieldset class="forms_fieldset">
               <div class="forms_field">
                 <input type="text" placeholder="Full-Name" id="dname" name="dname" class="forms_field-input" required autofocus />
@@ -120,6 +120,22 @@
 
         // Redirect to the profile page with the username as a query parameter
         window.location.href = `patientlogs.html?username=${encodeURIComponent(username)}`;
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const doctorLoginForm = document.getElementById('doctor-login-form');
+      const fullNameInput = document.getElementById('dname');
+
+      doctorLoginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get the entered full name
+        const fullName = fullNameInput.value;
+
+        // Redirect to the doctor.html page with the full name as a query parameter
+        window.location.href = `doctor.html?fullname=${encodeURIComponent(fullName)}`;
       });
     });
   </script>
