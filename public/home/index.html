@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+          background-image: url("https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?w=1060&t=st=1688057348~exp=1688057948~hmac=58cfedfe25b50bccfb5b56851b86df495ae20e1191a55464cc24866fadd6ffee");
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin: 0;
+          padding: 0;
+    }
+    </style>
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="login.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>Login Form</title>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="index.html"><img src="iicon.png" width="60px" height="60px"  id="icon"></a>
+      <span style="color: #E2DCC8;">Medi</span><span style="color: #F1F1F1;">Base</span>
+        <span style="color: #0F3D3E;">------------------------------------------------------------</span>
+        <a href="index.html#about" class="navl">About</a>
+        <span style="color: #0F3D3E;">--</span>
+        <a class="navl" href="reg.html" target="_blank">Register</a>
+    </h1>
+  </header>
+  <section class="user">
+    <div class="user_options-container">
+      <div class="user_options-text">
+        <div class="user_options-unregistered">
+          <h2 class="user_unregistered-title">Are you a Doctor?</h2>
+          <p class="user_unregistered-text">Hello Doctors!</p>
+          <button class="user_unregistered-signup" id="signup-button">Patient-login</button>
+        </div>
+  
+        <div class="user_options-registered">
+          <h2 class="user_registered-title">Are you a patient?</h2>
+          <p class="user_registered-text">Login here and get your report analysis.</p>
+          <button class="user_registered-login" id="login-button">Doctor-login</button>
+        </div>
+      </div>
+      
+      <div class="user_options-forms" id="user_options-forms">
+        <div class="user_forms-login">
+          <h2 class="forms_title">Doctor-Login</h2>
+          <form class="forms_form" id="doctor-login-form" method="post" action="/">
+            <fieldset class="forms_fieldset">
+              <div class="forms_field">
+                <input type="text" placeholder="Full-Name" id="dname" name="dname" class="forms_field-input" required autofocus />
+              </div>
+              <div class="forms_field">
+                <input type="text" placeholder="Doctor-ID" id="did" name="did" class="forms_field-input" required autofocus />
+              </div>
+              <div class="forms_field">
+                <input type="password" placeholder="Password" id="dpwd" name="dpwd" class="forms_field-input" required />
+              </div>
+            </fieldset>
+            <div class="forms_buttons">
+              <button type="button" class="forms_buttons-forgot">Forgot password?</button>
+              <input type="submit" value="Log in" class="forms_buttons-action">
+            </div>
+          </form>
+        </div>
+        <div class="user_forms-signup">
+          <h2 class="forms_title">Patient-Log in</h2>
+          <form class="forms_form" id="patient-login-form"   method="post" action="/patient-login">
+            <fieldset class="forms_fieldset">
+              <div class="forms_field">
+                <input type="text" placeholder="Patient-Name" id="ploginname" name="ploginname" class="forms_field-input" required />
+              </div>
+              <div class="forms_field">
+                <input type="text" placeholder="Patient-ID" id="ploginid" name="ploginid" class="forms_field-input" required />
+              </div>
+              <div class="forms_field">
+                <input type="password" placeholder="Password" id="ploginpwd" name="ploginpwd" class="forms_field-input" required />
+              </div>
+            </fieldset>
+            <div class="forms_buttons">
+              <input type="submit" value="Log in" class="forms_buttons-action">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="about">
+     
+    <div class="about-img">
+      <img src="simg.jpg" alt="logo" />
+    </div>
+
+ 
+    <div class="about-text">
+      <h2 style="color: #0F3D3E;">MediBase as a Solution</span></h2>
+      <br />
+      <p style="text-align: justify">
+        MediBase integrates a report analysis NLP model as well as an image-based disease detection model for a seamless diagnosis experience for both doctors as well as patients. If you are a patient, register and login to your MediBase account. Doctors can upload patient details, symptoms, as well as scans and x-rays. Patients can access their repoorts and their analysis on their dashboard.
+      </p>
+    </div>
+  
+  </section>
+  
+  <script src="login.js">
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const patientLoginForm = document.getElementById('patient-login-form');
+      const usernameInput = document.getElementById('ploginname');
+
+      patientLoginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get the entered username
+        const username = usernameInput.value;
+
+        // Redirect to the profile page with the username as a query parameter
+        window.location.href = `patientlogs.html?username=${encodeURIComponent(username)}`;
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const doctorLoginForm = document.getElementById('doctor-login-form');
+      const fullNameInput = document.getElementById('dname');
+
+      doctorLoginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get the entered full name
+        const fullName = fullNameInput.value;
+
+        // Redirect to the doctor.html page with the full name as a query parameter
+        window.location.href = `doctor.html?fullname=${encodeURIComponent(fullName)}`;
+      });
+    });
+  </script>
+</body>
+</html>
