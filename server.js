@@ -73,7 +73,7 @@ app.post("/", function(req, res){
         }
         console.log("record inserted");
     });
-    return res.sendFile(path.join(__dirname,'public','doctor','doctor.html'))
+    return res.redirect('http://localhost:5000')
 })
 
 app.post("/report-submit", function(req, res){
