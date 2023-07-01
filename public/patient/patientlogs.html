@@ -62,6 +62,22 @@
 
     </ul>
 </main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const welcomeMessage = document.getElementById('welcome-message');
+
+      // Get the username from the query parameter in the URL
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get('username');
+
+      // Update the welcome message
+      welcomeMessage.textContent = `Welcome, ${username}`;
+
+       // Reset the form fields
+       const patientLoginForm = document.getElementById('patient-login-form');
+      patientLoginForm.reset();
+    });
+  </script>
 </body>
 
 </html>
