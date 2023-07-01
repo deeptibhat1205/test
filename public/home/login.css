@@ -5,15 +5,19 @@
 header{
   background-color: #0F3D3E;
 }
+h1{
+  padding: 1rem;
+}
 #icon
 {
-  float: right;
+  float: left;
   position: sticky;
   top: 0;
   padding-top: 0.25rem;
   padding-bottom: 0.75rem;
   padding-left: 0.1rem;
   inline-size: auto;
+  margin-right: 20px;
 }
 .navl
 {
@@ -48,9 +52,7 @@ header{
   padding: 40px;
   font-size: larger;
 }
-#about{
-  background-color: ;
-}
+
 
 h1{
   padding: 1rem;

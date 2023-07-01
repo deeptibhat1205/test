@@ -18,14 +18,16 @@
     <title>Login Form</title>
 </head>
 <body>
-    <header>
-        <h1><span style="color: #E2DCC8;">Medi</span><span style="color: #F1F1F1;">Base</span>
-            <span style="color: #0F3D3E;">------------------------------------------------------------</span>
-            <a href="#about" class="navl">About</a>
-            <span style="color: #0F3D3E;">--</span>
-            <a class="navl" href="reg.html" target="_blank">Register</a>
-            <a href="index.html"><img src="iicon.png" width="60px" height="60px"  id="icon"></a></h1>
-      </header>
+  <header>
+    <h1>
+      <a href="index.html"><img src="iicon.png" width="60px" height="60px"  id="icon"></a>
+      <span style="color: #E2DCC8;">Medi</span><span style="color: #F1F1F1;">Base</span>
+        <span style="color: #0F3D3E;">------------------------------------------------------------</span>
+        <a href="index.html#about" class="navl">About</a>
+        <span style="color: #0F3D3E;">--</span>
+        <a class="navl" href="reg.html" target="_blank">Register</a>
+    </h1>
+  </header>
   <section class="user">
     <div class="user_options-container">
       <div class="user_options-text">
@@ -65,7 +67,7 @@
         </div>
         <div class="user_forms-signup">
           <h2 class="forms_title">Patient-Log in</h2>
-          <form class="forms_form" method="post" action="/patient-login">
+          <form class="forms_form" id="patient-login-form"   method="post" action="/patient-login">
             <fieldset class="forms_fieldset">
               <div class="forms_field">
                 <input type="text" placeholder="Patient-Name" id="ploginname" name="ploginname" class="forms_field-input" required />
@@ -108,16 +110,13 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const patientLoginForm = document.getElementById('patient-login-form');
-      const usernameInput = document.getElementById('username-input');
+      const usernameInput = document.getElementById('ploginname');
 
       patientLoginForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         // Get the entered username
         const username = usernameInput.value;
-
-        const patientLoginForm = document.getElementById('patient-login-form');
-        patientLoginForm.reset();
 
         // Redirect to the profile page with the username as a query parameter
         window.location.href = `patientlogs.html?username=${encodeURIComponent(username)}`;

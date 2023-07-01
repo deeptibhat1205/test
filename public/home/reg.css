@@ -10,13 +10,14 @@ h1{
 }
 #icon
 {
-  float: right;
+  float: left;
   position: sticky;
   top: 0;
   padding-top: 0.25rem;
   padding-bottom: 0.75rem;
   padding-left: 0.1rem;
   inline-size: auto;
+  margin-right: 20px;
 }
 .navl
 {
