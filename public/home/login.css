@@ -2,14 +2,66 @@
     --bg-color: #F1F1F1;
     --second-bg-color: #0F3D3E;
 }
+header{
+  background-color: #0F3D3E;
+}
+#icon
+{
+  float: right;
+  position: sticky;
+  top: 0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.1rem;
+  inline-size: auto;
+}
+.navl
+{
+  color: #F1F1F1;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 30px;
+}
+.about {
+  background-image: url(https://img.freepik.com/free-vector/clean-medical-background_53876-116875.jpg?w=1380&t=st=1688192003~exp=1688192603~hmac=b42f6d828528d6d84ef127056947305410c24f8b96551a6d2933ee3d7b367719);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+}
 
+.about-img img {
+  max-width: 530px;
+  height: auto;
+  width: 100%;
+  border-radius: 8px;
+  margin: 100px;
+}
+.about-text{
+  margin-left: 5%;
+  margin-right: 20%;
+  background-color: white;
+  padding: 40px;
+  font-size: larger;
+}
+#about{
+  background-color: ;
+}
+
+h1{
+  padding: 1rem;
+}
 * {
   box-sizing: border-box;
 }
 body{
-  background-image: url("https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?w=1060&t=st=1688057348~exp=1688057948~hmac=58cfedfe25b50bccfb5b56851b86df495ae20e1191a55464cc24866fadd6ffee");
+  background-image: url(https://img.freepik.com/free-vector/clean-medical-background_53876-116875.jpg?w=1380&t=st=1688192003~exp=1688192603~hmac=b42f6d828528d6d84ef127056947305410c24f8b96551a6d2933ee3d7b367719);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;

@@ -18,6 +18,14 @@
     <title>Login Form</title>
 </head>
 <body>
+    <header>
+        <h1><span style="color: #E2DCC8;">Medi</span><span style="color: #F1F1F1;">Base</span>
+            <span style="color: #0F3D3E;">------------------------------------------------------------</span>
+            <a href="#about" class="navl">About</a>
+            <span style="color: #0F3D3E;">--</span>
+            <a class="navl" href="reg.html" target="_blank">Register</a>
+            <a href="index.html"><img src="iicon.png" width="60px" height="60px"  id="icon"></a></h1>
+      </header>
   <section class="user">
     <div class="user_options-container">
       <div class="user_options-text">
@@ -77,6 +85,44 @@
       </div>
     </div>
   </section>
-  <script src="login.js"></script>
+  <section class="about" id="about">
+     
+    <div class="about-img">
+      <img src="simg.jpg" alt="logo" />
+    </div>
+
+ 
+    <div class="about-text">
+      <h2 style="color: #0F3D3E;">MediBase as a Solution</span></h2>
+      <br />
+      <p style="text-align: justify">
+        MediBase integrates a report analysis NLP model as well as an image-based disease detection model for a seamless diagnosis experience for both doctors as well as patients. If you are a patient, register and login to your MediBase account. Doctors can upload patient details, symptoms, as well as scans and x-rays. Patients can access their repoorts and their analysis on their dashboard.
+      </p>
+    </div>
+  
+  </section>
+  
+  <script src="login.js">
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const patientLoginForm = document.getElementById('patient-login-form');
+      const usernameInput = document.getElementById('username-input');
+
+      patientLoginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get the entered username
+        const username = usernameInput.value;
+
+        const patientLoginForm = document.getElementById('patient-login-form');
+        patientLoginForm.reset();
+
+        // Redirect to the profile page with the username as a query parameter
+        window.location.href = `patientlogs.html?username=${encodeURIComponent(username)}`;
+      });
+    });
+  </script>
 </body>
 </html>

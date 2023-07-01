@@ -2,7 +2,29 @@
     --bg-color: #F1F1F1;
     --second-bg-color: #0F3D3E;
 }
-
+header{
+  background-color: #0F3D3E;
+}
+h1{
+  padding: 1rem;
+}
+#icon
+{
+  float: right;
+  position: sticky;
+  top: 0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.1rem;
+  inline-size: auto;
+}
+.navl
+{
+  color: #F1F1F1;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 30px;
+}
 body {
     font-family: "Roboto";
     margin: 0;
