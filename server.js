@@ -100,6 +100,12 @@ app.post("/report-submit", function(req, res){
 })
 
 
+// retrieving data from database
+app.get("/retrieve-data", function(req, res, next){
+
+
+})
+
 
 
 

@@ -15,22 +15,22 @@
   <header>
     <h1><span style="color: #E2DCC8;">Medi</span><span style="color: #F1F1F1;">Base</span></h1>
   </header>
-  <form>
+  <form action="\retrieve-data" method="post">
     <!-- 2 column grid layout with text inputs for the first and last names -->
     <div class="row">
       <div class="col-sm-6">
         <div class="form-outline">
           <label class="form-label" for="pid">Patient ID</label>
-          <input type="text" id="pid" class="form-control"  maxlength="0" />
+          <input type="text" id="pid" name="pid" class="form-control"  maxlength="0" /><p><%=patientName %></p>
           <br>
           <label class="form-label" for="date">Date</label>
-        <input type="text" id="date" class="form-control"  maxlength="0" />
+        <input type="text" id="date" name="date" class="form-control"  maxlength="0" />
         </div>
       </div>
       <div class="col-sm-6">
         <div class="form-outline">
           <label class="form-label" for="pname">Patient Name</label>
-          <input type="text" id="pname" class="form-control"  maxlength="0" />
+          <input type="text" id="pname" name="pname" class="form-control"  maxlength="0" />
           <br>
 
         </div>
@@ -53,9 +53,9 @@
       <div class="col-sm-6">
         <div class="form-outline mb-4">
           <label class="form-label" for="rint">Report Analysis</label>
-          <textarea class="form-control" id="rint" rows="7" maxlength="0"></textarea><br>
+          <textarea class="form-control" id="rint" name="rint" rows="7" maxlength="0"></textarea><br>
           <label class="form-label" for="uint">Upload Analysis</label>
-          <textarea class="form-control" id="uint" rows="7" maxlength="0"></textarea><br>
+          <textarea class="form-control" id="uint" name="uint" rows="7" maxlength="0"></textarea><br>
         </div>
       </div>
     </div>
